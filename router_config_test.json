@@ -6,7 +6,7 @@
                 "ipv6_address": "2001:100:100:1::1/64"
             },
             "GigabitEthernet2/0": {
-                "ipv6_address": "2001:100:100:1::2/64"
+                "ipv6_address": "2001:100:100:1::2/64" "baba"
             }
         }
     }
