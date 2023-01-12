@@ -16,4 +16,4 @@ for i, line in enumerate(config_lines):
 
 # Write the modified configuration to a new file
 with open("router_config_modified.cfg", "w") as f:
-    f.writelines(config_lines)
+    f.writelines(config_lines)  
