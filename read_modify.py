@@ -6,7 +6,7 @@ with open("router_config_test.json", "r") as f:
     data = json.load(f)
 
 # Make changes to the JSON data
-data["router1"]["interface"]["GigabitEthernet1/0"]["ipv6_address"] = "192.168.2.1"
+data["router1"]["interface"]["GigabitEthernet1/0"]["ipv6_address"] = "2001:100:100:9::1/64"
 
 ##------------------------------------------------------------
 
@@ -22,22 +22,17 @@ for i, line in enumerate(config_lines):
     for key, value in data["router1"].items():
         if key == "interface":
             for intf, intf_data in value.items():
-                cfg_data += "interface " + intf  
-                if cfg_data in line:
-                     for intf_key, intf_value in intf_data.items():
-                        for j in range(5):
+                ##print(intf) ## 1/0  2/0
+                #cfg_data += "interface " + intf  + "\n"
+                if intf in line:
+                    print(intf)  # 1/0    2/0
+                    for j in range(5):   
+                        for intf_key, intf_value in intf_data.items():
+                            #print(intf_value)
                             if ' ipv6 address' in config_lines[i+j]:
-                                #print(config_lines[i+j])
-                                config_lines[i+j] = "ipv6 address " + intf_value+ "\n"
-                                #print(config_lines[i+j])
-                                #print("Interface IP address changed to 192.168.2.1")
-                                exit
+                                config_lines[i+j] = " ipv6 address " + intf_value+ "\n"
                             if 'shutdown' in config_lines[i+j]:
-                                #print(config_lines[i+j])
-                                config_lines[i+j] = "ipv6 address " + intf_value+ "\n"
-                                #print(config_lines[i+j])
-                                #print("Interface IP address changed to 192.168.2.1")
-                                exit
+                                config_lines[i+j] = " ipv6 address " + intf_value+ "\n" + " ipv6 enable\n"
 
 # Write the modified configuration to a new file
 with open("router_config_modified.cfg", "w") as f:
