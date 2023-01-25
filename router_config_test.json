@@ -1,13 +1,351 @@
 {
-    "router1": {
-        "hostname": "router1",
-        "interface": {
-            "GigabitEthernet1/0": {
-                "ipv6_address": "2001:100:100:1::1/64"
+    "AS100":{
+        "AS_nom":"100",
+        "Protocole":"RIP",
+        "Router":{
+            "router1": {
+                "hostname": "1",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": " "
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": " "
+                    }
+                },
+                "link": ["2","4"],
+                "border": []          
             },
-            "GigabitEthernet2/0": {
-                "ipv6_address": "2001:100:100:1::2/64"
-            }
+            "router2": {
+                "hostname": "2",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet3/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    }
+                },
+                "link": ["1","3","4"],
+                "border": []  
+            },
+            "router3": {
+                "hostname": "3",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet3/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet4/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    }
+                },
+                "link": ["2","5","6","7"],
+                "border": []  
+            },
+            "router4": {
+                "hostname": "4",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet3/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    }                
+                },
+                "link": ["1","2","5"],
+                "border": []  
+            },
+            "router5": {
+                "hostname": "5",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet3/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet4/0": {
+                        "bord": false,
+                        "ipv6_address": "."
+                    }
+                },
+                "link": ["3","4","6","7"],
+                "border": []  
+            },
+            "router6": {
+                "hostname": "6",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet3/0": {
+                        "bord": true,
+                        "ipv6_address": ""
+                    }
+                },
+                "link": ["3","5"],
+                "border":["8"]
+            },
+            "router7": {
+                "hostname": "7",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet3/0": {
+                        "bord": true,
+                        "ipv6_address": ""
+                    }
+                },
+                "link": ["3","5"],
+                "border":["9"] 
+            }  
         }
+        
+
+    },
+    "AS200":{
+        "AS_nom":"200",
+        "Protocole":"OSPF",
+        "Router":{
+            "router8": {
+                "hostname": "8",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet3/0": {
+                        "bord": true,
+                        "ipv6_address": ""
+                    }
+                   
+                },
+                "link": ["10", "12"],
+                "border":["6"]                   
+            },
+            "router9": {
+                "hostname": "9",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet3/0": {
+                        "bord": true,
+                        "ipv6_address": ""
+                    }
+                },
+                "link": ["10","12"],
+                "border":["7"]    
+            },
+            "router10": {
+                "hostname": "10",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet3/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet4/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    }
+                },
+                "link": ["8","9","11","12"],
+                "border": []
+            },
+            "router11": {
+                "hostname": "11",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet3/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    }
+                },
+                "link": ["10","13","14"],
+                "border": []
+            },
+            "router12": {
+                "hostname": "12",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet3/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet4/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    }
+                },
+                "link": ["8","9","10","13"],
+                "border": []
+            },
+            "router13": {
+                "hostname": "13",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet3/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    }
+                },
+                "link": ["11","12","14"],
+                "border": []
+            },
+            "router14": {
+                "hostname": "14",
+                "interface": {
+                    "Loopback0":{
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet1/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    },
+                    "GigabitEthernet2/0": {
+                        "bord": false,
+                        "ipv6_address": ""
+                    }
+                },
+                "link": ["11","13"],
+                "border": []
+            }
+    
+        }
+
     }
+       
+    
 }
